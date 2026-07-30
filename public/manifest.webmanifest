@@ -1,0 +1,16 @@
+{
+  "name": "机の灯",
+  "short_name": "机の灯",
+  "description": "教材別タイマーと週の積み重ねを、登録せず端末内だけへ残す学習机",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1220",
+  "theme_color": "#111b2e",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tsukue-no-hi.yhay81.com/sitemap.xml
