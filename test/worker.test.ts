@@ -36,9 +36,14 @@ const eventRequest = (
 
 beforeEach(async () => {
   miniflare = new Miniflare({
-    d1Databases: { DB: "tsukue-no-hi-test" },
-    modules: true,
-    script: "export default { fetch() { return new Response('test') } }",
+    workers: [
+      {
+        name: "app",
+        d1Databases: { DB: "tsukue-no-hi-test" },
+        modules: true,
+        script: "export default { fetch() { return new Response('test') } }",
+      },
+    ],
   });
   const database = await miniflare.getD1Database("DB");
   const migration = await readFile(migrationPath, "utf8");
