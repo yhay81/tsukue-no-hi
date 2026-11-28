@@ -38,10 +38,20 @@ beforeEach(async () => {
   miniflare = new Miniflare({
     workers: [
       {
-        name: "app",
-        d1Databases: { DB: "tsukue-no-hi-test" },
-        modules: true,
-        script: "export default { fetch() { return new Response('test') } }",
+        config: {
+          name: "",
+          compatibilityDate: "2026-07-27",
+          env: { DB: { type: "d1", id: "tsukue-no-hi-test" } },
+          manifest: {
+            mainModule: "index.mjs",
+            modules: {
+              "index.mjs": {
+                type: "esm",
+                contents: "export default { fetch() { return new Response('test') } }",
+              },
+            },
+          },
+        },
       },
     ],
   });
